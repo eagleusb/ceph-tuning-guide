@@ -8,7 +8,7 @@ direct=1
 sync=0
 buffered=0
 
-bs=${BLOCKSIZE}
+bs=${FIO_BLOCKSIZE}
 iodepth=32
 
 ; norandommap
@@ -22,5 +22,5 @@ refill_buffers
 ; buffer_compress_percentage=10
 ; buffer_pattern=0xdeadface
 
-log_avg_msec =6000
+log_avg_msec=6000
 log_hist_msec=60000

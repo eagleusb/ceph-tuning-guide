@@ -1,0 +1,11 @@
+[global]
+include rbd-common.fio
+
+[benchmark-rbd-5min]
+name=benchmark-rbd-5min-read
+description=5min read from rbd pool
+runtime=5m
+time_based=1
+ramp_time=30s
+; write randread randwrite rw,readwrite rw,readwrite
+readwrite=read
