@@ -2,7 +2,13 @@
 
 ## Benchmark
 
+Giving hell to I/O for fun.
+
 ### RBD Bench
+
+```shell
+bash rbd/bench.sh
+```
 
 ### CBT
 
