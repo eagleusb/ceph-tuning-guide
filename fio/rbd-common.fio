@@ -1,0 +1,26 @@
+ioengine=rbd
+clustername=ceph
+clientname=admin
+pool=benchmark
+
+startdelay=15s
+direct=1
+sync=0
+buffered=0
+
+bs=${BLOCKSIZE}
+iodepth=32
+
+; norandommap
+; randrepeat=0
+; rwmixread=70
+invalidate=0
+refill_buffers
+
+; dedupe compress tests
+; dedupe_percentage=80
+; buffer_compress_percentage=10
+; buffer_pattern=0xdeadface
+
+log_avg_msec =6000
+log_hist_msec=60000
