@@ -1,0 +1,18 @@
+[global]
+include rbd-common.fio
+
+[50GB]
+name=benchmark-rbd-50GB-read
+description=50GB sequential read
+rbdname=__TODO__
+numjobs=1
+loops=1
+size=50G
+nrfiles=100
+; write randread randwrite rw,readwrite rw,readwrite
+readwrite=read
+
+write_bw_log=rbd_50GB
+write_hist_log=rbd_50GB
+write_iops_log=rbd_50GB
+write_lat_log=rbd_50GB
