@@ -1,0 +1,42 @@
+---
+cluster:
+  user: "bmpa"
+  head: "ft01"
+  clients: ["ft01", "ft02", "ft03", "ft04", "ft05", "ft06"]
+  osds: ["hswNode01", "hswNode02", "hswNode03", "hswNode04", "hswNode05"]
+  mons:
+   ft02:
+     a: "192.168.142.202:6789"
+  osds_per_node: 16
+  fs: xfs
+  mkfs_opts: '-f -i size=2048 -n size=64k'
+  mount_opts: '-o inode64,noatime,logbsize=256k'
+  conf_file: '/home/bmpa/cbt/ceph.conf'
+  use_existing: False
+  newstore_block: True
+  rebuild_every_test: False
+  clusterid: "ceph"
+  iterations: 1
+  tmp_dir: "/home/bmpa/tmp_cbt"
+  pool_profiles:
+    2rep:
+      pg_size: 8192
+      pgp_size: 8192
+      replication: 2
+benchmarks:
+  librbdfio:
+    time: 300
+    ramp: 300
+    vol_size: 10
+    mode: ['randrw']
+    rwmixread: [0,70,100]
+    op_size: [4096]
+    procs_per_volume: [1]
+    volumes_per_client: [10]
+    use_existing_volumes: False
+    iodepth: [4,8,16,32,64,128]
+    osd_ra: [4096]
+    norandommap: True
+    cmd_path: '/usr/local/bin/fio'
+    pool_profile: '2rep'
+    log_avg_msec: 250
