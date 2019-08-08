@@ -1,0 +1,18 @@
+[global]
+include rbd-common.fio
+
+[benchmark-rbd-15GB]
+name=benchmark-rbd-15GB-read
+description=15GB sequential read
+rbdname="15GB-image"
+numjobs=1
+loops=1
+size=15G
+nrfiles=15
+; write randread randwrite rw,readwrite rw,readwrite
+readwrite=read
+
+write_bw_log=rbd_15GB
+write_hist_log=rbd_15GB
+write_iops_log=rbd_15GB
+write_lat_log=rbd_15GB
